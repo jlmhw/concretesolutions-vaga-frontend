@@ -1,0 +1,77 @@
+*, *::before, *::after {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body { font-family: 'Dosis', sans-serif; }
+
+#app {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+#app h1 {
+  font-weight: 600;
+  font-size: 38px;
+}
+
+#app #search-user {
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  font-family: 'Dosis', Arial, Helvetica, sans-serif;
+  outline: none;
+  border: 1px solid #2929293d;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: border .3s ease-in-out;
+}
+
+#app #search-user:focus {
+  border: 1px solid rgb(26, 129, 224);
+}
+
+#custom-template-account-info 
+{
+  margin-top: 30px;
+
+  & > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#custom-template-account-repositories
+{
+  margin-top: 10px;
+
+  & > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    max-height: 263px;
+    overflow: scroll;
+    overflow-y: scroll;
+
+    & > a li {
+      cursor: pointer;
+      border-bottom: 1px solid lightgray;
+      padding: 10px;
+      color: #292929;
+      border-bottom: 1px soli lightgray;
+      transition: border .3s ease-in-out, background .3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(26, 128, 224, 0.171);
+        border-bottom: 1px solid rgb(26, 129, 224);
+      }
+    }
+  }
+}

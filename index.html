@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope="" itemtype="https://schema.org/WebPage">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Concrete Solutions</title>
+  <link rel="shortcut icon" href=".dist/images/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="custom.css" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css" rel="stylesheet">
+</head>
+<body>
+  <script id="template-account-info" type="x-tmpl-mustache">
+    <div id="custom-template-account-info">
+      <img src="{{avatar}}" width="80" />
+      <ul>
+        <li><b>@{{login}}</b></li>
+        <li>
+          <i class="ri-group-fill"></i> {{followers}} followers
+          <i class="ri-user-fill"></i> {{following}} following
+        </li>
+        <li><i class="ri-mail-fill"></i> {{email}}</li>
+        <li><i class="ri-map-pin-fill"></i> {{location}}</li>
+        <li><i class="ri-pencil-fill"></i> {{biography}}</li>
+      </ul>
+    </div>
+  </script>
+
+  <script id="template-account-repositories" type="x-tmpl-mustache">
+    <div id="custom-template-account-repositories">
+      <h3><b>Public repositories</b></h3>
+      <ul>
+        {{#repositories}}
+          <a href="{{html_url}}"><li>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <p>⭐ {{stargazers_count}}<p>
+              <p><b>{{name}}</b></p>
+            </div>
+            <p style="margin-top: 4px;">{{description}}</p>
+          </li></a>
+        {{/repositories}}
+      </ul>
+    </div>
+  </script>
+
+  <div id="app">
+    <h1>Concrete Solutions</h1>
+    <input id="search-user" type="text" placeholder="Enter a username for a GitHub account" />
+    <hr />
+    <div id="output-account-info"></div>
+    <div id="output-repositories-account"></div>
+  </div>
+
+  <script src="./dist/main.js" type="module"></script>
+</body>
+</html>
