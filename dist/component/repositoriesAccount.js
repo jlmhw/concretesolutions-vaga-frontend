@@ -1,8 +1,7 @@
 export function fetchRepositoryUser(username) {
     fetch(`https://api.github.com/users/${username}/repos`)
         .then((request) => request.json())
-        .then((response) => visualizerRepositoriesData(response))
-        .then((error) => console.error("Unable to retrieve repositories for this account: ", error));
+        .then((response) => visualizerRepositoriesData(response));
 }
 function visualizerRepositoriesData(repositories) {
     var _a;
